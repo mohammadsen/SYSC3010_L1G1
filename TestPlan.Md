@@ -30,14 +30,15 @@ The Console should Display this:
 [Log] The value has been Updated & The Light is OFF (index.html, line 89)
 
 # Motion Sensor 
+In order to test the motion detector, you must have the [detectMotion.py] (Project Scripts) script running and the PIR sensor circuit put together
 
+1.) User can make a movement in front of the PIR sensor and system will detect it -> The value that should be observed in Firebase is: Motion/Motion detected: 1 
 
+2.) In the case when no motion is detected by the PIR sensor -> The value that should be observed in Firebase is: Motion/Motion detected: 0
 
+3.) Whenever change is detected by the ESP32 constant polling of the Firebase database, the ESP32 should be able to determine status of the light -> Firebase: LedStatus/LedStatus: 0 or 1
 
-
-
-
-
+4.) If LED was ON/OFF and motion detected -> The value that should be observed in Firebase is: LedStatus/LedStatus: 1
 
 # Deployment Diagram
 
