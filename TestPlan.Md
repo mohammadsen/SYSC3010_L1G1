@@ -40,7 +40,9 @@ The Console should Display this:
 
 
 # Deployment Diagram
-
+<p align="center" width="100%">
+   <img src="https:https://github.com/mohammadsen/SYSC3010_L1G1.git/Images/deployment_diagram.png" width="80%" margin-left="auto" margin-right="auto">
+</p>
 
 # Communication Protocol Table
 <img width="673" alt="Screen Shot 2022-03-12 at 9 20 21 PM" src="https://user-images.githubusercontent.com/15981590/158042092-6095358b-73e9-4b92-bb35-c51cd2fb5357.png">
