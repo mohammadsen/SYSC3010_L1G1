@@ -15,7 +15,8 @@ In order to test that the Alexa, you must be logged into the Amazon Alexa Develo
 
 ### To Test The GUI, You must download and Open Index.html in your desired Browser. It found in the Github Repo
 
-1.) In the GUI, Click the "Turn on" button  -> The value that should be observed in Firebase is: LedStatus/LedStatus: 1; 
+1.) In the GUI, Click the "Turn on" button  -> The value that should be observed in Firebase is: LedStatus/LedStatus: 1;
+
 2.) In the GUI, Click the "Turn off" button  -> The value that should be observed in Firebase is: LedStatus/LedStatus: 0;
 
 In both cases, you can further verify that the GUI buttons are working by looking at the Web Browsers Console. 
