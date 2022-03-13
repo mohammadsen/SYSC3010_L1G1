@@ -1,19 +1,19 @@
-#Test Plan for L1G1 
+# Test Plan for L1G1 
 
 
 ### This is the test plan that is used to test our End to End communication portion of the Project. 
 ### In order to Verify that most of these tests work, you must be logged into the Firebase Console. 
 
-#Alexa: 
+# Alexa: 
 In order to test that the Alexa, you must be logged into the Amazon Alexa Developer Dashboard @ developer.amazon.com/dashboard
 
 1.) Either Enter or Speak "Tell light control to turn on lights"  -> The value that should be observed in Firebase is: LedStatus/LedStatus: 1
 
 2.) Either Enter or Speak "Tell light control to turn off light strip"  -> The value that should be observed in Firebase is:  LedStatus/LedStatus: 0
 
-#GUI Test
+# GUI Test
 
-###To Test The GUI, You must download and Open Index.html in your desired Browser. It found in the Github Repo
+### To Test The GUI, You must download and Open Index.html in your desired Browser. It found in the Github Repo
 
 1.) In the GUI, Click the "Turn on" button  -> The value that should be observed in Firebase is: LedStatus/LedStatus: 1; 
 2.) In the GUI, Click the "Turn off" button  -> The value that should be observed in Firebase is: LedStatus/LedStatus: 0;
@@ -27,7 +27,7 @@ The Console should Display this:
 
 [Log] The value has been Updated & The Light is OFF (index.html, line 89)
 
-#Motion Sensor 
+# Motion Sensor 
 
 
 
