@@ -44,7 +44,7 @@ The Console should Display this:
 
 # Communication Protocol Table
 
-#Sender	Receiver	Message	Data Format	Purpose
+# Sender	Receiver	Message	Data Format	Purpose
 Raspberry Pi	Firebase	detectsMotion()	Boolean (0 or 1) 	Notifies Firebase motion is detected
 Raspberry Pi (Alexa)	Firebase	firebase.database().ref("LedStatus").set{}	Boolean (0 or 1)	Turns Lights on or Off
 Raspberry Pi (Alexa)	Firebase	firebase.database().ref("LedEffect").set{}	Boolean (0 to 9)	Sets LED Effects
