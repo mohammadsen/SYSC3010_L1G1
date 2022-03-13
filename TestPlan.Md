@@ -42,6 +42,7 @@ In order to test the motion detector, you must have the [detectMotion.py] (Proje
 
 # Deployment Diagram
 
+![deployment diagram](https://user-images.githubusercontent.com/97857398/158083488-af822815-1022-47c3-b95c-1f7b3c45ad84.jpg)
 
 # Communication Protocol Table
 <img width="673" alt="Screen Shot 2022-03-12 at 9 20 21 PM" src="https://user-images.githubusercontent.com/15981590/158042092-6095358b-73e9-4b92-bb35-c51cd2fb5357.png">
