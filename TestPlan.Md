@@ -43,15 +43,5 @@ The Console should Display this:
 
 
 # Communication Protocol Table
-
-# Sender	Receiver	Message	Data Format	Purpose
-Raspberry Pi	Firebase	detectsMotion()	Boolean (0 or 1) 	Notifies Firebase motion is detected
-Raspberry Pi (Alexa)	Firebase	firebase.database().ref("LedStatus").set{}	Boolean (0 or 1)	Turns Lights on or Off
-Raspberry Pi (Alexa)	Firebase	firebase.database().ref("LedEffect").set{}	Boolean (0 to 9)	Sets LED Effects
-ESP 32	LED	makeLightEffect()	Int (0 to 11)	Controls LED lights; 0 & 1 are used to turn off and on lights
-GUI	Firebase	TurnOnLight()	Boolean(0 or 1) 	Used to Turn on Light; Base Color is White
-GUI	Firebase 	TurnOffLight()	Boolean(0 or 1) 	Used to turn off light
-GUI	Firebase	SetLightEffect(x)	Int(0 to 9)	Used for different light effects
-Firebase	ESP32	Firebase.RTDB.getInt(&fbdo, "/LedStatus/LedStatus")	Boolean (0 or 1) 	Determines if light is on
-Firebase	ESP32	Firebase.RTDB.getInt(&fbdo, "/LedStatus/Ledeffect")	Int (1 – 9)	Sets Light Effect
+<img width="673" alt="Screen Shot 2022-03-12 at 9 20 21 PM" src="https://user-images.githubusercontent.com/15981590/158042092-6095358b-73e9-4b92-bb35-c51cd2fb5357.png">
 
