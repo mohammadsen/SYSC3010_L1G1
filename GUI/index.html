@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUI TEST</title>
+    
+<style type="text/css">
+h1 {text-align: center;}
+h2{text-align: center;}
+button{text-align: center;}
+.text-center {
+  text-align: center;
+}
+</style>    
+
+</head>
+<body>
+    
+    <h1 >Welcome To The LED Control GUI</h1>
+    <h2>Please Make a Selection Below</h2>
+    <div class="text-center">
+    <button type="button" id="button1"> Turn on </button>
+    <br>
+    <br> 
+    <br> 
+    <button type="button" id="button2"> Turn off </button>
+    <br>
+
+</div>
+   <script type="module"> 
+    
+        // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js";
+    
+    //import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    
+    const firebaseConfig = {
+      apiKey: "AIzaSyCjM2ldLom7MMcyHelKZoOxyMz0sJBbLeQ",
+      authDomain: "l1g1finalfirebase.firebaseapp.com",
+      databaseURL: "https://l1g1finalfirebase-default-rtdb.firebaseio.com",
+      projectId: "l1g1finalfirebase",
+      storageBucket: "l1g1finalfirebase.appspot.com",
+      messagingSenderId: "612873609529",
+      appId: "1:612873609529:web:7d1b7f3fcd144baede08e8",
+      measurementId: "G-9BQM9JFW3D"
+    };
+  
+   // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+   // const analytics = getAnalytics(app);
+    
+    
+    document.getElementById("button1").addEventListener("click", function TurnOnLight(){
+        
+        console.log("I sensed a click\n");
+        try{
+            console.log("Connected\n");
+            
+            set(ref(database, 'LedStatus'), {
+                'LedStatus': 1, 
+            });
+            console.log("The value has been Updated & The Light is on");
+            
+        }catch(e){
+                console.log("There is an Error, Catch logs here: ",e);
+            }
+
+            
+    })
+
+
+    document.getElementById("button2").addEventListener("click", function TurnOffLight(){
+        console.log("I sensed a click\n");
+        try{
+            console.log("Connected\n");
+            
+            set(ref(database, 'LedStatus'), {
+                'LedStatus': 1, 
+            });
+            console.log("The value has been Updated & The Light is OFF");
+            
+        }catch(e){
+                console.log("There is an Error, Catch logs here: ",e);
+            }
+    })
+
+    
+</script>
+    
+
+</body> 
+</html>
