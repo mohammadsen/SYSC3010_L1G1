@@ -21,6 +21,7 @@ In order to test that the Alexa, you must be logged into the Amazon Alexa Develo
 In both cases, you can further verify that the GUI buttons are working by looking at the Web Browsers Console. 
 
 The Console should Display this: 
+
 [Log] I sensed a click (index.html, line 82)
 
 [Log] Connected (index.html, line 84)
