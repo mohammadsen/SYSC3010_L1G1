@@ -4,97 +4,209 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GUI TEST</title>
+    <title>L1G1 GUI</title>
     
 <style type="text/css">
-h1 {text-align: center;}
-h2{text-align: center;}
-button{text-align: center;}
+body{background-color: grey;}
+
 .text-center {
   text-align: center;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+}  
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /*background-color: #2196F3;*/
+  background-color: grey;   
+  padding: 10px;
+}
+.grid-item {
+  /*background-color: rgba(255, 255, 255, 0.8);*/
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.grid-item:hover{
+    color: white;
+}
+
+.LedLightStatus{
+    font-size: 40px;
+    font-weight: bold;
 }
 </style>    
 
 </head>
 <body>
     
-    <h1 >Welcome To The LED Control GUI</h1>
-    <h2>Please Make a Selection Below</h2>
+    
     <div class="text-center">
-    <button type="button" id="button1"> Turn on </button>
+        <h1 >Welcome To The LED Control GUI</h1>
+        <h2>Please Make a Selection Below</h2>
+        <button class="grid-item"; type="button" id="button1"> Turn on </button>
+        <button class="grid-item"; type="button" id="button2"> Turn off </button>
+   
+
     <br>
-    <br> 
-    <br> 
-    <button type="button" id="button2"> Turn off </button>
+    <br>
+   
+    <div class="grid-container">
+      <button class="grid-item"; type ="button"; id="button3"; style="background-color: rgb(255, 0, 0);"  onClick="buttonClicked(2);"> Red</button>
+      <button class="grid-item"; type ="button"; id="button4"; style="background-color: rgb(0, 255, 0);" onClick="buttonClicked(3);"> Green</button>
+      <button class="grid-item"; type ="button"; id="button5"; style="background-color: rgb(0, 0, 255);" onClick="buttonClicked(4);"> Blue</button>
+      <button class="grid-item"; type ="button"; id="button6"; style="background-color: rgb(255, 255, 0);" onClick="buttonClicked(5);"> Yellow</button>
+      <button class="grid-item"; type ="button"; id="button7"; style="background-color: rgb(255, 128, 0);" onClick="buttonClicked(6);"> Orange</button>
+      <button class="grid-item"; type ="button"; id="button8"; style="background-color: rgb(75, 0, 130);" onClick="buttonClicked(7);"> Indigo</button>
+      <button class="grid-item"; type ="button"; id="button9"; style="background-color: rgb(243, 196, 207);" onClick="buttonClicked(8);"> Rose</button>
+      <button class="grid-item"; type ="button"; id="button10"; style="background-color: rgb(255, 255, 255); "onClick="buttonClicked(1);"> White</button>
+      <button class="grid-item"; type ="button"; id="button11"; style="background-color: rgb(0, 255, 255); "onClick="buttonClicked(9);" > Cyan</button>
+    </div>
+
+    <br>
     <br>
 
-</div>
+    <div class="LedLightStatus">
+        <div id="StatusIndicator"></div>
+    </div>
+
    <script type="module"> 
     
-        // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
-    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js";
-    
-    //import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    
-    const firebaseConfig = {
-      apiKey: "AIzaSyCjM2ldLom7MMcyHelKZoOxyMz0sJBbLeQ",
-      authDomain: "l1g1finalfirebase.firebaseapp.com",
-      databaseURL: "https://l1g1finalfirebase-default-rtdb.firebaseio.com",
-      projectId: "l1g1finalfirebase",
-      storageBucket: "l1g1finalfirebase.appspot.com",
-      messagingSenderId: "612873609529",
-      appId: "1:612873609529:web:7d1b7f3fcd144baede08e8",
-      measurementId: "G-9BQM9JFW3D"
-    };
-  
-   // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const database = getDatabase(app);
-   // const analytics = getAnalytics(app);
-    
-    
-    document.getElementById("button1").addEventListener("click", function TurnOnLight(){
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js";
+        import { getDatabase, ref, set, update, onValue } from "https://www.gstatic.com/firebasejs/9.6.8/firebase-database.js";
         
-        console.log("I sensed a click\n");
-        try{
-            console.log("Connected\n");
-            
-            set(ref(database, 'LedStatus'), {
-                'LedStatus': 1, 
-            });
-            console.log("The value has been Updated & The Light is on");
-            
-        }catch(e){
-                console.log("There is an Error, Catch logs here: ",e);
+        const firebaseConfig = {
+          apiKey: "AIzaSyCjM2ldLom7MMcyHelKZoOxyMz0sJBbLeQ",
+          authDomain: "l1g1finalfirebase.firebaseapp.com",
+          databaseURL: "https://l1g1finalfirebase-default-rtdb.firebaseio.com",
+          projectId: "l1g1finalfirebase",
+          storageBucket: "l1g1finalfirebase.appspot.com",
+          messagingSenderId: "612873609529",
+          appId: "1:612873609529:web:7d1b7f3fcd144baede08e8",
+          measurementId: "G-9BQM9JFW3D"
+        };
+      
+       // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+       
+        
+        document.getElementById("button1").addEventListener("click", function TurnOnLight(){
+            console.log("I sensed a click\n");
+            try{
+                console.log("Connected\n");
+                
+                set(ref(database, 'LedStatus/'), {
+                    'LedStatus': 1, 
+                    'LedEffect': 1,
+                });
+                console.log("The value has been Updated & The Light is OFF");
+                
+            }catch(e){
+                    console.log("There is an Error, Catch logs here: ",e);
+                }
+        })
+
+        document.getElementById("button2").addEventListener("click", function TurnOffLight(){
+            console.log("I sensed a click\n");
+            try{
+                console.log("Connected\n");
+                
+                set(ref(database, 'LedStatus/'), {
+                    'LedStatus': 0, 
+                    'LedEffect': 0,
+                });
+                console.log("The value has been Updated & The Light is OFF");
+                
+            }catch(e){
+                    console.log("There is an Error, Catch logs here: ",e);
+                }
+        })
+
+        window.buttonClicked = function(x){
+            switch (x) {
+                case 0:
+                    update(ref(database, 'LedStatus'), {  
+                       'LedEffect': 0,  
+                    })
+                    break;
+                case 1:
+                    update(ref(database, 'LedStatus'), {  
+                       'LedEffect': 1,  
+                    })
+                    break;
+                case 2:
+                    update(ref(database, 'LedStatus'), {  
+                       'LedEffect': 2,  
+                    })
+                    break;
+                case 3:
+                    update(ref(database, 'LedStatus'), {  
+                       'LedEffect': 3,  
+                    })
+                    break;
+                case 4:
+                    update(ref(database, 'LedStatus'), {  
+                       'LedEffect': 4,  
+                    })
+                    break;
+                case 5:
+                    update(ref(database, 'LedStatus'), {  
+                       'LedEffect': 5,  
+                    })
+                    break;
+                case 6:
+                    update(ref(database, 'LedStatus'), {  
+                       'LedEffect': 6,  
+                    })
+                    break;
+                case 7:
+                    update(ref(database, 'LedStatus'), {  
+                       'LedEffect': 7,  
+                    })
+                    break;
+                case 8:
+                    update(ref(database, 'LedStatus'), {  
+                       'LedEffect': 8,  
+                    })
+                    break;
+                case 9:
+                    update(ref(database, 'LedStatus'), {  
+                       'LedEffect': 9,  
+                    })
+                    break;
+                default:
+
+             }
+        }
+
+
+
+
+        //This section is used to create the status indicator logic
+        var StatusIndicator = document.getElementById('StatusIndicator');
+        const postElement = document.querySelector('#post');
+        const postId = "1234";
+        const Ref = ref(database, 'LedStatus/LedStatus');
+       
+        function updateRef(a,b){  //used to get value
+            if(b == 1){
+                StatusIndicator.innerHTML = "The LED Strip is ON";
             }
-
-            
-    })
-
-
-    document.getElementById("button2").addEventListener("click", function TurnOffLight(){
-        console.log("I sensed a click\n");
-        try{
-            console.log("Connected\n");
-            
-            set(ref(database, 'LedStatus'), {
-                'LedStatus': 1, 
-            });
-            console.log("The value has been Updated & The Light is OFF");
-            
-        }catch(e){
-                console.log("There is an Error, Catch logs here: ",e);
+            else if (b == 0 ){
+                StatusIndicator.innerHTML = "The LED Strip is OFF  ";
             }
-    })
+            } 
+        
+        onValue(Ref, (snapshot) => {
+            const data = snapshot.val();
+            updateRef(postElement, data);  //
+        });
 
-    
-</script>
+    </script>
     
 
 </body> 
