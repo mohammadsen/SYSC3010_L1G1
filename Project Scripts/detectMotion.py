@@ -58,25 +58,25 @@ def readData():
  
     firebase = pyrebase.initialize_app(config) 
     db = firebase.database() 
-    dataset = "Motion"
+    dataset = "LedStatus"
   
     # Returns the entry as an ordered dictionary (parsed from json) 
-    mySensorData = db.child(dataset).get()
-    print(mySensorData.val())
+    users = db.child(dataset).get()
+    print(users.val())
  
-    print("Parent Key: {}".format(mySensorData.key())) 
-    print("Parent Value: {}\n".format(mySensorData.val())) 
+    print("Parent Key: {}".format(users.key())) 
+    print("Parent Value: {}\n".format(users.val())) 
  
     # Returns the dictionary as a list
-    mySensorData_list = mySensorData.each() 
+    users_list = users.each() 
     # Takes the last element of the list 
-    lastDataPoint = mySensorData_list[-1] 
+    lastDataPoint = users_list[-2] 
  
     print("Child Key: {}".format(lastDataPoint.key())) 
     print("Child Value: {}\n".format(lastDataPoint.val()))  
 
 def main():
-    writeData()
+    #writeData()
     readData()
 if __name__ == "__main__": 
     main()
