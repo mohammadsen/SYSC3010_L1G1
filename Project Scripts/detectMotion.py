@@ -46,37 +46,9 @@ def writeData():
               
     except KeyboardInterrupt:
         GPIO.cleanup()
-        
-def readData():
-    # Create new Firebase config and database object 
-    config = { 
-              "apiKey": "AIzaSyCjM2ldLom7MMcyHelKZoOxyMz0sJBbLeQ",
-              "authDomain": "l1g1finalfirebase.firebaseapp.com",
-              "databaseURL": "https://l1g1finalfirebase-default-rtdb.firebaseio.com/",
-              "storageBucket": "l1g1finalfirebase.appspot.com",
-    } 
- 
-    firebase = pyrebase.initialize_app(config) 
-    db = firebase.database() 
-    dataset = "LedStatus"
-  
-    # Returns the entry as an ordered dictionary (parsed from json) 
-    users = db.child(dataset).get()
-    print(users.val())
- 
-    print("Parent Key: {}".format(users.key())) 
-    print("Parent Value: {}\n".format(users.val())) 
- 
-    # Returns the dictionary as a list
-    users_list = users.each() 
-    # Takes the last element of the list 
-    lastDataPoint = users_list[-2] 
- 
-    print("Child Key: {}".format(lastDataPoint.key())) 
-    print("Child Value: {}\n".format(lastDataPoint.val()))  
+          
 
 def main():
-    #writeData()
-    readData()
+    writeData()
 if __name__ == "__main__": 
     main()
