@@ -1,0 +1,18 @@
+## Weekly Individual Project Update Report
+### Group number: L1G1
+
+## Student name: Wilson Amoussougbo
+## Week: _ 9th week (14th-20th March)_
+___
+1. Hours spent on project : 4 hours
+2. Breakdown of hours spent :
+   1.Started on Unit Test: 2 hours
+   2.Completed the technical memo draft: 2 hour
+3. Accomplishment this week:
+  - Finished technical Memo and started on Unit demo 
+4. Opinion about your progress
+  - We made a consistent progress so far and established the goal. Now next step!!!
+5. Planning for next week
+  - Next step would be get all the UNit test working
+6. Anything blocking me that I need from others? 
+  - No.
