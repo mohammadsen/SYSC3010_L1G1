@@ -196,8 +196,7 @@ void loop() {
           }
         }
       }
-    }else {
-       Serial.println(fbdo.errorReason()); //else Stay on 
+    }else {//Else Stay off 
       for (int i=NUM_LEDS; i>=0; i--){
           leds[i] = CRGB(0,0 , 0);
           FastLED.setBrightness(100-i);
