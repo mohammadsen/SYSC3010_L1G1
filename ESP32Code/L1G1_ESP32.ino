@@ -106,6 +106,7 @@ void motionDetectedOff(){
 //Function that controls the light strip effect depending on User Selection  
 void makeLightEffect(int input){
   if (input == 1){
+    Serial.println("The Color is Changed to White");
     for (int i=0; i<NUM_LEDS; i++){
                 leds[i] = CRGB(255,255,255);
                 FastLED.setBrightness(2*i);
@@ -114,20 +115,24 @@ void makeLightEffect(int input){
               }
     
     }else if(input == 2){
+      Serial.println("The Color is Changed to Red");
       for (int i=0; i<NUM_LEDS; i++){
                 leds[i] = CRGB(255,0,0 );
                 FastLED.setBrightness(2*i);
                 FastLED.show();
                 delay(50);
               }
+      
       }else if(input == 3){
+        Serial.println("The Color is Changed to Green");
         for (int i=0; i<NUM_LEDS; i++){
                 leds[i] = CRGB(0,255,0 );
                 FastLED.setBrightness(2*i);
                 FastLED.show();
                 delay(50);
-              }
+              }    
       }else if(input == 4){
+        Serial.println("The Color is Changed to Blue");
         for (int i=0; i<NUM_LEDS; i++){
                 leds[i] = CRGB(0,0,255 );
                 FastLED.setBrightness(2*i);
@@ -135,20 +140,25 @@ void makeLightEffect(int input){
                 delay(50);
               }
       }else if(input == 5){
+        Serial.println("The Color is Changed to Yellow");
         for (int i=0; i<NUM_LEDS; i++){
                 leds[i] = CRGB(255,255,0 );
                 FastLED.setBrightness(2*i);
                 FastLED.show();
                 delay(50);
               }
+      
       }else if(input == 6){
+        Serial.println("The Color is Changed to Orange");
         for (int i=0; i<NUM_LEDS; i++){
                 leds[i] = CRGB(255,128,0 );
                 FastLED.setBrightness(2*i);
                 FastLED.show();
                 delay(50);
               }
-      }else if(input == 7){
+      
+     }else if(input == 7){
+      Serial.println("The Color is Changed to Indigo");
         for (int i=0; i<NUM_LEDS; i++){
                 leds[i] = CRGB(75,0,130 );
                 FastLED.setBrightness(2*i);
@@ -156,13 +166,15 @@ void makeLightEffect(int input){
                 delay(50);
               }
       }else if(input == 8){
+        Serial.println("The Color is Changed to Rose");
         for (int i=0; i<NUM_LEDS; i++){
                 leds[i] = CRGB(243,196,297 );
                 FastLED.setBrightness(2*i);
                 FastLED.show();
                 delay(50);
-              }
+              } 
       }else if(input == 9){
+        Serial.println("The Color is Changed to Cyan");
         for (int i=0; i<NUM_LEDS; i++){
                 leds[i] = CRGB(0,255,255);
                 FastLED.setBrightness(2*i);
