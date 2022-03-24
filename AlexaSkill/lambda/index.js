@@ -1,7 +1,6 @@
 /* *
- * This sample demonstrates handling intents from an Alexa skill using the Alexa Skills Kit SDK (v2).
- * Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
- * session persistence, api calls, and more.
+ * This is the Alexa code that controls the LED strip for SYSC3010 L1G1
+ *@Author Mohammad Gaffori
  * */
 const Alexa = require('ask-sdk-core');
 const firebase = require('firebase/app');
@@ -37,32 +36,32 @@ const LaunchRequestHandler = {
 };
 
 
-const LightOnIntentHandler = {
+const LightOnIntentHandler = { //this handles when a user asks alexa to turn on the light strips
     
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'LightOn';
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'LightOn';  //the light on intent has 3 phrases which activate it. The amazon Lambda model was trained to understand the 3 commands
     },
    
     async handle(handlerInput) {
-        let speakOutput = "Turning LED Strip On";
+        let speakOutput = "Turning LED Strip On"; //What Alexa will say upon successful operation
         try{
-           
-            firebase.database().goOnline();
+            //This next section connects to the Firebase Realtime Database and modifies the LedStatus and LedEffect Values
+            firebase.database().goOnline(); //Form a connection to firebase first 
             console.log("Connected\n");
-            await firebase.database().ref("LedStatus").update({
+            await firebase.database().ref("LedStatus").update({ //update 2 values
             'LedStatus': 1, 
             'LedEffect': 1,
             });
             
-            firebase.database().goOffline();
+            firebase.database().goOffline(); //disconnect from firebase 
         
         }catch(e){
             console.log("Catch logs here: ",e);
-            speakOutput = `There was a problem adding `;
+            speakOutput = `There was a problem adding `; //if there is an error Alexa will say this 
         }
         console.log("Out of Try Catch");
-        return handlerInput.responseBuilder
+        return handlerInput.responseBuilder  //Response to user
             .speak(speakOutput)
             .reprompt(speakOutput)
             .getResponse();
