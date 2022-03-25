@@ -1,0 +1,5 @@
+To record a file Enter this in terminal:
+  arecord --format=S16_LE --duration=5 --rate=16000 hardwareTest.WAV
+  
+  
+To play back the file, double click on hardwareTest.WAV in your home directory
