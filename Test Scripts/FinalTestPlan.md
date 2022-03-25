@@ -12,8 +12,13 @@
 # SenseHat Software & Harware Test
 	-Run Test script [senseHatTempTest.py] which includes two tests
 	-First test is the Hardware test which makes sure that the sense Hat is  capable of reading the temperature
-	-Second test will test the capability of reading data from the sensehat and then writing it onto firebase and then read that value from firebase and checks if 		it is the same as the original temperature value
+	-Second test will test the capability of reading data from the sensehat and then writing it onto firebase and then read that value from firebase and checks 	     if it is the same as the original temperature value
 	-All test cases should pass
+
+# Push Notifications 
+	-Run [sensorData.py] and [detectMotion.py]
+	-After running [sensorData.py] which writes the temperature value onto firebase, a notification will be sent as an sms with the temperature value
+	-After running [detectMotion.py] which chcecks if there's motion detected, a notification will be sent as an sms with the message "motionDetected" 
 
 # Raspberry Pi Mic + Speaker 
 	-Record and Play audio file
