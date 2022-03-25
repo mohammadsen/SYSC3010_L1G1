@@ -9,8 +9,10 @@
 # Alexa Test 
 	-Type out 12 Different Intents: 
 
-# SenseHat Software
-	-Run Test Script
+# SenseHat Software & Harware Test
+	-Run Test script [senseHatTempTest.py] which includes two tests
+	-First test is the Hardware test which makes sure that the sense Hat is  capable of reading the temperature
+	-Second test will test the capability of reading data from the sensehat and then writing it onto firebase and then read that value from firebase and checks if 		it is the same as the original temperature value
 
 # Raspberry Pi Mic + Speaker 
 	-Record and Play audio file
