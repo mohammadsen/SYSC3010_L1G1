@@ -26,5 +26,4 @@
 
 # GUI software 
 	-Run the [testGUI.py](Test Scripts)
-	-The test automatically clicks all the button on the interface
-	-Verity that the date data is pushed to Firebase after button is clicked
+	-The test automatically clicks all the button on the interface and verifies that the right data is pushed into Firebase
