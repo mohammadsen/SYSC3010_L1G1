@@ -21,7 +21,7 @@
 	-After running [detectMotion.py] which chcecks if there's motion detected, a notification will be sent as an sms with the message "motionDetected" 
 
 # Raspberry Pi Mic + Speaker 
-	-Record and Play audio file
+	-Copy and Paste commands From RaspiHarware.txt
 
 # PIR motion sensor HardWare
 	-Run [pirSensor_hardwareTest.py](Test Scripts)
