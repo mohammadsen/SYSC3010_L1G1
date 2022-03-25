@@ -10,5 +10,9 @@
 
 # ESP32 Software 
 	-Run Test Script
+	
+# Raspberry Pi Mic + Speaker 
+	-Record and Play audio file
+
 
 	
