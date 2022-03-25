@@ -1,15 +1,15 @@
 # Unit Test Final Plan 
 
 # ESP32 HardWare
-	- Test Output Pin Should pass
-	- Visually Confirm Red Green and blue are shown with 3 seconds in between 
+	- Visually Confirm Red Green and blue are shown on the LED STRIP with a 3 Second Delay
 
 # Alexa Test 
 	-Type out 12 Different Intents: 
+		-
   
 
 # ESP32 Software 
-	-Run Test Script
+	-Run  ESP32TESTS.into
 
 # SenseHat Software
 	-Run Test Script
