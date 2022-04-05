@@ -6,6 +6,7 @@ const Alexa = require('ask-sdk-core');
 const firebase = require('firebase/app');
 require('firebase/database');
 
+
 const config = {
   apiKey: "AIzaSyCjM2ldLom7MMcyHelKZoOxyMz0sJBbLeQ",
   authDomain: "l1g1finalfirebase.firebaseapp.com",
@@ -26,7 +27,7 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'Welcome, you can say Hello or Help. Which would you like to try?';
+        const speakOutput = 'Welcome to the Light Control App created by L1 G1. Please say a valid Command.';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -36,32 +37,32 @@ const LaunchRequestHandler = {
 };
 
 
-const LightOnIntentHandler = { //this handles when a user asks alexa to turn on the light strips
+const LightOnIntentHandler = {
     
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'LightOn';  //the light on intent has 3 phrases which activate it. The amazon Lambda model was trained to understand the 3 commands
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'LightOn';
     },
    
     async handle(handlerInput) {
-        let speakOutput = "Turning LED Strip On"; //What Alexa will say upon successful operation
+        let speakOutput = "Turning LED Strip On";
         try{
-            //This next section connects to the Firebase Realtime Database and modifies the LedStatus and LedEffect Values
-            firebase.database().goOnline(); //Form a connection to firebase first 
+           
+            firebase.database().goOnline();
             console.log("Connected\n");
-            await firebase.database().ref("LedStatus").update({ //update 2 values
+            await firebase.database().ref("LedStatus").update({
             'LedStatus': 1, 
             'LedEffect': 1,
             });
             
-            firebase.database().goOffline(); //disconnect from firebase 
+            firebase.database().goOffline();
         
         }catch(e){
             console.log("Catch logs here: ",e);
-            speakOutput = `There was a problem adding `; //if there is an error Alexa will say this 
+            speakOutput = `There was a problem adding `;
         }
         console.log("Out of Try Catch");
-        return handlerInput.responseBuilder  //Response to user
+        return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
             .getResponse();
@@ -124,6 +125,7 @@ const LightsRedIntentHandler = {
             console.log("Catch logs here: ",e);
             speakOutput = `There was a problem adding `;
         }
+       
         console.log("Out of Try Catch");
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -131,6 +133,7 @@ const LightsRedIntentHandler = {
             .getResponse();
     }
 };
+
 
 const LightsGreenIntentHandler = {
     
@@ -388,6 +391,39 @@ const LightsCyanIntentHandler = {
     }
 };
 
+const GetTemperatureIntentHandler = {
+    
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'GetTemperature';
+    },
+   
+    async handle(handlerInput) {
+        var temperature = 0; //have to initialize temperature variable
+        try{
+            
+            firebase.database().goOnline();
+            console.log("Connected\n");
+            await firebase.database().ref('sensorData/Temperature').once('value', (snapshot) => {
+                console.log(snapshot.val());
+                temperature = snapshot.val() -20 ;
+                console.log(temperature);
+            });
+            firebase.database().goOffline();
+            speakOutput = "The inside ambient temperature is " + temperature + "degrees Celcius"; 
+        
+        }catch(e){
+            console.log("Catch logs here: ",e);
+            speakOutput = `There was a problem adding `;
+        }
+        console.log("Out of Try Catch");
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
 const HelloWorldIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -525,6 +561,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         LightsBlueIntentHandler,
         LightsGreenIntentHandler,
         LightsRedIntentHandler,
+        GetTemperatureIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         FallbackIntentHandler,
