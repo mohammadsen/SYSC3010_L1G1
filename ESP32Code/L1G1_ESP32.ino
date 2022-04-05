@@ -2,7 +2,6 @@
 //This code makes the ESP32 communicate with the Firebase Realtime Database and Control the LED strip
 //@Author Mohammad Gaffori
 
-
 #include <Arduino.h>
 #include <WiFi.h>
 #include <Firebase_ESP_Client.h>
@@ -12,7 +11,6 @@
 #define LED_PIN 12 
 #define NUM_LEDS 60
 CRGB leds[NUM_LEDS];
-
 
 //Token Generation for FireBase Access
 #include "addons/TokenHelper.h"
@@ -44,7 +42,7 @@ float floatValue;
 bool signupOK = false;
 
 //Counter Used for MotionDetector 
-int motionCount; 
+int motionCount = 0; 
 
 void setup() {
 
@@ -192,10 +190,12 @@ void loop() {
     sendDataPrevMillis = millis();
 
     //If motion Detected and Light Strip is off, call motionDetectedOn() to turn on light strip
-    if (Firebase.RTDB.getInt(&fbdo, "/Motion/Motion detected")  && fbdo.intData() == 1) {
+    if (Firebase.RTDB.getInt(&fbdo, "/Motion/Motion detected")  && fbdo.intData() == 1 && motionCount == 0) {
         motionDetectedOn();
+        Serial.println(motionCount);
         //If motion Detected and Light Strip is on, with motion counter set to true call motionDetectedOff();
       } else if (Firebase.RTDB.getInt(&fbdo, "/Motion/Motion detected")  && fbdo.intData() == 1 && motionCount == 1){
+        Serial.println("ion the else");
         motionDetectedOff();
       }
       
@@ -203,7 +203,7 @@ void loop() {
       for (int i=1;i<10; i++){ 
         if (Firebase.RTDB.getInt(&fbdo, "/LedStatus/LedEffect")  && fbdo.intData() == i) { //If for loop value matches Firebase value
            makeLightEffect(i); //Makelighteffect of user selected value
-           Serial.println("Changed");
+           //Serial.println("Changed");
            break;
           }
         }
