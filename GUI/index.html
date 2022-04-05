@@ -38,6 +38,11 @@ body{background-color: grey;}
     font-size: 40px;
     font-weight: bold;
 }
+
+.AmbientTemperatre{
+    font-size: 40px;
+    font-weight: bold;
+}
 </style>    
 
 </head>
@@ -72,6 +77,12 @@ body{background-color: grey;}
     <div class="LedLightStatus">
         <div id="StatusIndicator"></div>
     </div>
+    <br>
+    <br>
+    <div class="AmbientTemperature">
+        <div id="temperature"></div>
+    </div>
+
 
    <script type="module"> 
     
@@ -204,6 +215,22 @@ body{background-color: grey;}
         onValue(Ref, (snapshot) => {
             const data = snapshot.val();
             updateRef(postElement, data);  //
+        });
+
+
+        //This section is used to create the status indicator logic
+        var AmbientTemperature = document.getElementById('temperature');
+        const TemperatureRef = ref(database, 'sensorData/Temperature');
+       
+        function TemperatureUpdate(b){  //used to show value
+                var temp = b - 20;
+                AmbientTemperature.innerHTML = "The Ambient Temperature is " + temp + "˚C";
+  
+            } 
+        
+        onValue(TemperatureRef, (snapshot) => {
+            const data = snapshot.val();
+            TemperatureUpdate(data);  //
         });
 
     </script>
