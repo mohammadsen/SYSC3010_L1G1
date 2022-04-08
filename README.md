@@ -47,9 +47,9 @@ pip install selenium
 
 ## SCRIPTS
 
-### [detectMotion](Project Scripts)
+### [detectMotion](ProjectScripts)
 This script is used to detect motion and update Firebase as well as sending text notification to the user.
-### [sensorData](Project Scripts)
+### [sensorData](ProjectScripts)
 This script is used to determine indoor temperature of user location and updated Firebase.
 ### [ESP32Code](ESP32Code)
 This script is used to constantly check Firebase and make the LED strip effects.
@@ -57,3 +57,14 @@ This script is used to constantly check Firebase and make the LED strip effects.
 This folder contains all the customized skills used for Amazon Alexa.
 ### [GUI](GUI)
 This folder contains all the ```JavaScript``` and ```HTLM``` code for the GUI interface.
+
+### For testing code/scripts refer to [TestScripts](TestScripts)
+
+## GUIDE
+In order to lauch the project properly, all of the hardware have to be set up on 3 different devices ```(Raspberry/ESP32)```. Next would be to run [detectMotion](ProjectScripts) , [sensorData](ProjectScripts) and [ESP32Code](ESP32Code) at the same time. It is important to also have the [GUI](GUI) interface openned. 
+```
+1- If motion is made in front of the PIR sensor, the LED light should turn on and a notification will be sent to user.
+2- If user makes change to GUI, appropriate color effect should be perceived happenning in real time on the LED strip.
+3- When user asks for indoor temparature, Alexa should be able to accuratelly answer back.
+```
+
