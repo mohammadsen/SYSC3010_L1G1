@@ -60,6 +60,7 @@ This folder contains all the ```JavaScript``` and ```HTLM``` code for the GUI in
 
 ### For testing code/scripts refer to [TestScripts](TestScripts)
 
+
 ## GUIDE
 In order to lauch the project properly, all of the hardware have to be set up on 3 different devices ```(Raspberry/ESP32)```. Next would be to run [detectMotion](ProjectScripts) , [sensorData](ProjectScripts) and [ESP32Code](ESP32Code) at the same time. It is important to also have the [GUI](GUI) interface openned. 
 ```
