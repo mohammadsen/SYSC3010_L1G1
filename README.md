@@ -79,6 +79,8 @@ $ ngrok http 8080
 ```
 and use one of the Redirection Links
 
+- To Set Up the local database  & SMS push notifications, you run LocalDB.py
+- To Set up the motion detection, you aim the Motion detector, and then detectMotion.py
 
   
 
