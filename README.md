@@ -78,5 +78,7 @@ In order to lauch the project properly, all of the hardware have to be set up on
 $ ngrok http 8080
 ```
 and use one of the Redirection Links
+
+
   
 
