@@ -71,13 +71,17 @@ In order to lauch the project properly, all of the hardware have to be set up on
 
 ## Set Up 
 
-- To Set Up The ESP32, you just plug it into a wall or a USB Port
+- To Set Up The ESP32, you must follow the following steps:
+    -Download the [Arduino IDE](https://www.circuitbasics.com/arduino-basics-installing-software/) and add [ESP32 capabilities to the IDE](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/) 
+    -Download the [FastLED](https://www.ardu-badge.com/FastLED) and [Firebase ESP Client](https://github.com/mobizt/Firebase-ESP-Client)library to the IDE 
+    -Copy the [ESP32 Code](https://github.com/mohammadsen/SYSC3010_L1G1/blob/Master/ESP32Code/L1G1_ESP32.ino) from GitHub to your IDE and upload it to your                 ESP32
+    -To use the ESP32, you can plug it into an electrical outlet via a DC adapter or leave it connected to your PC USB Port.
 - To Set Up The Alexa skill, you must first follow the [following guide](https://developer.amazon.com/en-US/docs/alexa/custom-skills/steps-to-build-a-custom-skill.html) to create a Custom Hello World Skill: 
     - Once the Skill is Created, you must copy the [package.json](https://github.com/mohammadsen/SYSC3010_L1G1/blob/Master/AlexaSkill/lambda/package.json) and [index.js](https://github.com/mohammadsen/SYSC3010_L1G1/blob/Master/AlexaSkill/lambda/index.js) files from this repository and replace the ones in your repository
     - To use the skill, Open the Alexa App on your phone, or Say Hey Alexa to your Amazon Echo and ask it to open the Skill using the name you created
 - To Set Up The GUI, you must follow the following steps: 
     - Download Apache using the following [guide](https://pimylifeup.com/raspberry-pi-apache/) and download NGROK using this [guide](https://medium.com/@gaelollivier/connect-to-your-raspberry-pi-from-anywhere-using-ngrok-801e9fd1dd46) **NOTE: Ignore anything relating to SSH Tunneling**
-    - Once downloaded, navigate to **VAR** and change the index.html file with the once found in this [repository](https://github.com/mohammadsen/SYSC3010_L1G1/blob/Master/GUI/index.html) 
+    - Once downloaded, navigate to **VAR** and change the index.html file with the one found in this [repository](https://github.com/mohammadsen/SYSC3010_L1G1/blob/Master/GUI/index.html) 
     - to get the GUI online type into the terminal:
     ```
     $ ngrok http 80
