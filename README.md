@@ -101,8 +101,11 @@ In order to lauch the project properly, all of the hardware have to be set up on
     ```
     and use one of the Redirection Links to access the GUI
 
-- To Set Up the local database  & SMS push notifications, you run LocalDB.py
-- To Set up the motion detection, you aim the Motion detector, and then detectMotion.py
+- To Set Up the local databases you must follow the following steps:
+    - First, you will need to install [sqlite3](https://iotbytes.wordpress.com/sqlite-db-on-raspberry-pi/)        **NOTE: Ignore everything after installing sqlite3** 
+    - To create the local databases and write into them by pulling from firebase, you run localDB.py
+- To get the temperature of a room, you run sensordata.py
+- To Set up the motion detection, you aim the Motion detector, and then you run detectMotion.py
 
   
 
