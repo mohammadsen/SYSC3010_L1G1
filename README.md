@@ -72,7 +72,9 @@ In order to lauch the project properly, all of the hardware have to be set up on
 ## Set Up 
 
 - To Set Up The ESP32, you just plug it into a wall or a USB Port
-- To Set Up The Alexa, you open the Alexa App on your phone, or Say Hey Alexa to your Amazon Echo 
+- To Set Up The Alexa skill, you must first follow the [following guide] to create a Custom Hello World Skill: https://developer.amazon.com/en-US/docs/alexa/custom-skills/steps-to-build-a-custom-skill.html
+- 
+open the Alexa App on your phone, or Say Hey Alexa to your Amazon Echo 
 - To Set Up The GUI, you type into the terminal:
 ```
 $ ngrok http 8080
