@@ -59,7 +59,11 @@ sudo apt install apache2
 ### [detectMotion](ProjectScripts)
 This script is used to detect motion and update Firebase as well as sending text notification to the user.
 ### [sensorData](ProjectScripts)
-This script is used to determine indoor temperature of user location and updated Firebase.
+This script is used to determine indoor temperature of user location and updated Firebase as well as sending text notification to the user.
+### [sendsms](ProjectScripts)
+This script is used to send a text to the user.
+### [localDB](ProjectScripts)
+This script is used to create two local databases and constantly pull from firebase databse. Sends a text message when the light strip is turned on.
 ### [ESP32Code](ESP32Code)
 This script is used to constantly check Firebase and make the LED strip effects.
 ### [AlexaSkill](AlexaSkill)
