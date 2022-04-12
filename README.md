@@ -75,11 +75,14 @@ In order to lauch the project properly, all of the hardware have to be set up on
 - To Set Up The Alexa skill, you must first follow the [following guide](https://developer.amazon.com/en-US/docs/alexa/custom-skills/steps-to-build-a-custom-skill.html) to create a Custom Hello World Skill: 
     - Once the Skill is Created, you must copy the [package.json](https://github.com/mohammadsen/SYSC3010_L1G1/blob/Master/AlexaSkill/lambda/package.json) and [index.js](https://github.com/mohammadsen/SYSC3010_L1G1/blob/Master/AlexaSkill/lambda/index.js) files from this repository and replace the ones in your repository
     - To use the skill, Open the Alexa App on your phone, or Say Hey Alexa to your Amazon Echo and ask it to open the Skill using the name you created
-- To Set Up The GUI, you type into the terminal:
-```
-$ ngrok http 8080
-```
-and use one of the Redirection Links
+- To Set Up The GUI, you must follow the following steps: 
+    - Download Apache using the following [guide](https://pimylifeup.com/raspberry-pi-apache/) and download NGROK using this [guide](https://medium.com/@gaelollivier/connect-to-your-raspberry-pi-from-anywhere-using-ngrok-801e9fd1dd46) **NOTE: Ignore anything relating to SSH Tunneling**
+    - Once downloaded, navigate to **VAR** and change the index.html file with the once found in this [repository](https://github.com/mohammadsen/SYSC3010_L1G1/blob/Master/GUI/index.html) 
+    - to get the GUI online type into the terminal:
+    ```
+    $ ngrok http 80
+    ```
+    and use one of the Redirection Links to access the GUI
 
 - To Set Up the local database  & SMS push notifications, you run LocalDB.py
 - To Set up the motion detection, you aim the Motion detector, and then detectMotion.py
