@@ -105,7 +105,7 @@ In order to lauch the project properly, all of the hardware have to be set up on
     - First, you will need to install [sqlite3](https://iotbytes.wordpress.com/sqlite-db-on-raspberry-pi/)        **NOTE: Ignore everything after installing sqlite3** 
     - To create the local databases and write into them by pulling from firebase, you run localDB.py
 - To get the temperature of a room, you run sensordata.py **NOTE: Make sure to also run sendsms.py so the push notifications work**
-- To Set up the motion detection, you aim the Motion detector, and then you run detectMotion.py
+
 
 - To Set Up the motion detector system, you first need to connect the circuit like shown [here](https://github.com/mohammadsen/SYSC3010_L1G1/blob/Master/Images/pir_sensorconfig.png) :
 
