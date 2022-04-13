@@ -5,10 +5,18 @@
 	
 # ESP32 Software 
 	- To test the Sofware portion of the ESP32, You must run and Upload the L1G1ESP32_TestCases.ino file onto your ESP32. You must then open the Serial Monitor (CMD + Shift + M)
-	- As the ESP32 runs through the Code, you should monitor the serial monitor. There will be 4 testcases which should pass as indicated in the serial moniotor 
+	- As the ESP32 runs through the Code, you should monitor the serial monitor. There will be 4 test cases which should pass as indicated in the serial moniotor 
 
 # Alexa Test 
-	-Type out 12 Different Intents: 
+	-Type out or speak the following 13 Different Intents: 
+		- "Alexa Open Light Control"
+		- "Alexa tell Light Control to turn lights on"
+		- "Alexa tell Light Control to turn lights off"
+		- "Alexa tell Light Control to get temperature"
+		- "Alexa tell Light Control to Change Light strip to *color*" -> One of the Colors found in the GUI
+	- The expected result is that the Light strips should change as commanded except for when Alexa is asked about the Temperature. Alexa should Reply with the temperature value in Degrees Celcius .
+	
+
 
 # SenseHat Software & Harware Test
 	-Run Test script [senseHatTempTest.py] which includes two tests
@@ -23,6 +31,7 @@
 
 # Raspberry Pi Mic + Speaker 
 	-Copy and Paste commands From RaspiHarware.txt
+	- The audio file that is created should be a recording of your voice 
 
 # PIR motion sensor HardWare
 	-Run [pirSensor_hardwareTest.py](Test Scripts)
