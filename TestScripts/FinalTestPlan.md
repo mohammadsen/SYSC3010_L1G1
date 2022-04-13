@@ -4,7 +4,8 @@
 	- Visually Confirm Red Green and blue are shown on the LED STRIP with a 3 Second Delay
 	
 # ESP32 Software 
-	-Run  ESP32TESTS.into
+	- To test the Sofware portion of the ESP32, You must run and Upload the L1G1ESP32_TestCases.ino file onto your ESP32. You must then open the Serial Monitor (CMD + Shift + M)
+	- As the ESP32 runs through the Code, you should monitor the serial monitor. There will be 4 testcases which should pass as indicated in the serial moniotor 
 
 # Alexa Test 
 	-Type out 12 Different Intents: 
