@@ -108,8 +108,11 @@ In order to lauch the project properly, all of the hardware have to be set up on
 - To Set up the motion detection, you aim the Motion detector, and then you run detectMotion.py
 
 - To Set Up the motion detector system, you first need to connect the circuit like shown [here](https://github.com/mohammadsen/SYSC3010_L1G1/blob/Master/Images/pir_sensorconfig.png) :
+
 1- Then you would need to install Pyrebase on the Raspberry Pi
+
 2- Next would be to start running ```detectMotion.py```
+
 3- The system would start the motion detection and if motion is detected, the firebase is updated.
   
 
